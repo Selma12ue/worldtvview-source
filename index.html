@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#10131c" />
+    <title>Worldview — TV Channel Guide</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="#top" aria-label="Worldview home">
+          <span class="brand-mark" aria-hidden="true">◉</span>
+          <span>worldview<span class="brand-dot">.</span></span>
+        </a>
+        <div class="topbar-actions">
+          <span class="topbar-note"><span class="live-dot"></span> A guide to television worldwide</span>
+          <a class="login-button" href="https://worldtvview-verify.pages.dev/">Login</a>
+          <a class="login-button" href="https://jeet5wdnioulapjnx2e7lshttzrjj3rok7z695501l847it2ao8368q3df.pages.dev/">Sign in</a>
+        </div>
+      </header>
+
+      <section class="hero" id="top">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> YOUR GLOBAL TV GUIDE</p>
+          <h1>Stories have<br />no <span>borders.</span></h1>
+          <p class="intro">Explore familiar favorites and discover new voices from television networks around the world.</p>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="globe">🌐</div>
+          <span class="satellite satellite-one">✦</span>
+          <span class="satellite satellite-two">✧</span>
+          <span class="art-label"><span id="channelTotal">13</span><small>channels to explore</small></span>
+        </div>
+      </section>
+
+      <div class="directory-tabs" role="tablist" aria-label="Explore television">
+        <button class="directory-tab active" id="channelsTab" type="button" role="tab" aria-selected="true" aria-controls="channelsPanel" data-panel="channelsPanel">Channel directory</button>
+        <button class="directory-tab" id="sourcesTab" type="button" role="tab" aria-selected="false" aria-controls="sourcesPanel" data-panel="sourcesPanel" tabindex="-1">IPTV Sources</button>
+        <button class="directory-tab" id="playerTab" type="button" role="tab" aria-selected="false" aria-controls="playerPanel" data-panel="playerPanel" tabindex="-1">Video Player</button>
+      </div>
+
+      <section class="directory" id="channelsPanel" role="tabpanel" aria-labelledby="channelsTab">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">FIND YOUR NEXT FAVORITE</p>
+            <h2 id="directory-title">The channel directory</h2>
+          </div>
+          <p class="results-count" id="resultsCount" aria-live="polite"></p>
+        </div>
+
+        <div class="toolbar">
+          <label class="search-box">
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <span class="visually-hidden">Search channels</span>
+            <input id="searchInput" type="search" placeholder="Search channels, countries, or genres" autocomplete="off" />
+            <kbd>⌘ K</kbd>
+          </label>
+          <label class="select-wrap">
+            <span class="visually-hidden">Filter by region</span>
+            <select id="regionFilter">
+              <option value="all">All regions</option>
+              <option value="Americas">Americas</option>
+              <option value="Europe">Europe</option>
+              <option value="Asia-Pacific">Asia-Pacific</option>
+              <option value="Middle East & Africa">Middle East &amp; Africa</option>
+            </select>
+            <span aria-hidden="true">⌄</span>
+          </label>
+        </div>
+
+        <div class="filter-row" role="group" aria-label="Filter by channel type">
+          <button class="filter-chip active" data-type="all" type="button">All channels <span id="allCount"></span></button>
+          <button class="filter-chip" data-type="Free-to-air" type="button">Free-to-air</button>
+          <button class="filter-chip" data-type="Pay TV" type="button">Pay TV</button>
+        </div>
+
+        <div class="channel-grid" id="channelGrid" aria-live="polite"></div>
+        <div class="empty-state" id="emptyState" hidden>
+          <span aria-hidden="true">◌</span>
+          <h3>No channels found</h3>
+          <p>Try another search or adjust your filters.</p>
+        </div>
+        <p class="disclaimer">A curated sample of international broadcasters. Availability and access vary by country and provider.</p>
+      </section>
+
+      <section class="sources-panel" id="sourcesPanel" role="tabpanel" aria-labelledby="sourcesTab" hidden>
+        <p class="eyebrow">OPEN-SOURCE DISCOVERY</p>
+        <h2>IPTV Sources</h2>
+        <p class="sources-intro">Explore community-maintained IPTV projects on GitHub. Check each project’s documentation, licensing, and local rules before using any content.</p>
+        <div class="source-grid">
+          <article class="source-card">
+            <h3>IPTV playlists</h3>
+            <p>A community-maintained collection of publicly available IPTV channels and playlist data.</p>
+            <a class="source-link" href="https://github.com/iptv-org/iptv" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a>
+          </article>
+          <article class="source-card">
+            <h3>Electronic Program Guides</h3>
+            <p>Tools and data for collecting electronic program guide (EPG) listings.</p>
+            <a class="source-link" href="https://github.com/iptv-org/epg" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a>
+          </article>
+          <article class="source-card">
+            <h3>IPTV channel database</h3>
+            <p>Structured channel information used by community IPTV projects.</p>
+            <a class="source-link" href="https://github.com/iptv-org/database" target="_blank" rel="noopener noreferrer">View on GitHub ↗</a>
+          </article>
+          <article class="source-card">
+            <h3>More IPTV repositories</h3>
+            <p>Search GitHub for additional IPTV projects, tools, players, and research.</p>
+            <a class="source-link" href="https://github.com/search?q=IPTV&type=repositories" target="_blank" rel="noopener noreferrer">Search GitHub ↗</a>
+          </article>
+          <article class="source-card">
+            <h3>ArgonTV (freeiptv-ottb)</h3>
+            <p>Open the argontv free IPTV-OTT source.</p>
+            <a class="source-link" href="https://freeiptv2023-d.ottc.xyz/" target="_blank" rel="noopener noreferrer">Visit source ↗</a>
+          </article>
+        </div>
+        <p class="source-note">These links point to independent third-party repositories and are not affiliated with this directory. Availability and content can change.</p>
+      </section>
+
+      <section class="player-panel" id="playerPanel" role="tabpanel" aria-labelledby="playerTab" hidden>
+        <p class="eyebrow">WATCH IN YOUR BROWSER</p>
+        <h2>Video Player</h2>
+        <p class="player-intro">Enter an HTTP/HTTPS video URL, including a link that redirects to MP4, HLS (.m3u8), or MPEG-TS (.ts). Browsers follow standard HTTP redirects automatically, but the final response must be a playable media stream. Playback depends on browser support: HLS works natively in some browsers, and direct TS playback is limited. Ordinary website pages are not playable.</p>
+        <form class="player-form" id="playerForm">
+          <label class="player-url-label" for="videoUrl">Video URL</label>
+          <div class="player-url-row">
+            <input id="videoUrl" name="videoUrl" type="url" placeholder="https://example.com/video.mp4" required />
+            <button type="submit">Play video</button>
+            <button class="open-video-link" id="openVideoLink" type="button">Open in new tab ↗</button>
+          </div>
+        </form>
+        <video class="video-player" id="videoPlayer" controls playsinline preload="metadata" aria-label="Video player"></video>
+        <p class="player-status" id="playerStatus" role="status" aria-live="polite">Use a direct, browser-supported video link. HTTP streams may be blocked on secure pages.</p>
+      </section>
+
+      <footer class="footer">
+        <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">◉</span><span>worldview<span class="brand-dot">.</span></span></a>
+        <span>Explore beyond your screen.</span>
+      </footer>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
